@@ -8,6 +8,7 @@ pipeline {
         }
         stage("Run Gatling") {
             steps {
+                sh 'mvn clean package'
                 sh 'mvn gatling:test'
             }
             post {
